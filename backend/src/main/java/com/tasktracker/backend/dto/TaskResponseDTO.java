@@ -19,6 +19,7 @@ public class TaskResponseDTO {
     @NotNull(message = "Task name is a must")
     private String name;
     private Status status;
+    private String description;
     private LocalDate entryDate;
     @NotNull(message = "DueDate is a must")
     private LocalDate dueDate;

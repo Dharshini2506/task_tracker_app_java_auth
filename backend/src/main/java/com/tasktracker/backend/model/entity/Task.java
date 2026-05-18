@@ -12,6 +12,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -34,6 +36,9 @@ public class Task {
     @Column(nullable = false, name = "name")
     private String name;
 
+    @Column(nullable = false, columnDefinition = "VARCHAR(255) DEFAULT ''")
+    private String description = "";
+
     @Column(nullable = false, name = "status")
     private Status status;
 
@@ -45,6 +50,10 @@ public class Task {
 
     @Column(nullable = false, name = "is_deleted")
     private boolean isDeleted;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private Users user;
 
     @PrePersist
     public void createdAt() {

@@ -17,4 +17,5 @@ public class TaskCreateRequestDTO {
     private String name;
     @NotNull(message = "DueDate is a must")
     private LocalDate dueDate;
+    private String description;
 }

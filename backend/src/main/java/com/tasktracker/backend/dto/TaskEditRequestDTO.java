@@ -15,6 +15,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class TaskEditRequestDTO {
     private String name;
+    private String description;
     private Status status;
     private LocalDate dueDate;
 }
